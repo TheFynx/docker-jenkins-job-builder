@@ -1,8 +1,7 @@
-FROM alpine:3.3
-MAINTAINER Jason Sallis <jason@sall.is>
+FROM python:alpine
+MAINTAINER Levi Smith <levi@fynx.me>
 
-ENV VERSION 1.4.0
+ENV JJBVERSION 1.6.1
 
-RUN apk add --no-cache python
-RUN apk add --no-cache py-pip
-RUN pip install jenkins-job-builder==${VERSION}
+RUN apk add --no-cache bash
+RUN pip install jenkins-job-builder==${JJBVERSION}

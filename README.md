@@ -1,6 +1,6 @@
 # docker-jenkins-job-builder
 
-A [docker](http://www.docker.com) containerized version of the [Jenkins Job Builder](https://github.com/openstack-infra/jenkins-job-builder) tool. A pre-built image is available via [Docker Hub](https://hub.docker.com/r/jsallis/jenkins-job-builder)
+A [docker](http://www.docker.com) containerized version of the [Jenkins Job Builder](https://github.com/openstack-infra/jenkins-job-builder) tool. A pre-built image is available via [Docker Hub](https://hub.docker.com/r/thefynx/jenkins-job-builder)
 
 ## Example usage
 
@@ -10,14 +10,14 @@ A [docker](http://www.docker.com) containerized version of the [Jenkins Job Buil
 
 ```
 docker run --interactive --tty --rm \
-  jsallis/jenkins-job-builder \
+  thefynx/jenkins-job-builder \
   jenkins-jobs --version
 ```
 
 ##### Output:
 
 ```
-Jenkins Job Builder version: 1.4.0
+Jenkins Job Builder version: See [Releases](https://github.com/TheFynx/docker-jenkins-job-builder/releases)
 ```
 
 ### Test job definition
@@ -32,7 +32,7 @@ Jenkins Job Builder version: 1.4.0
 docker run --interactive --tty --rm \
   --volume "$PWD":/opt/jenkins-job \
   --workdir /opt/jenkins-job \
-  jsallis/jenkins-job-builder \
+  thefynx/jenkins-job-builder \
   jenkins-jobs test job.yml
 ```
 
@@ -77,7 +77,7 @@ INFO:jenkins_jobs.builder:Cache saved
 docker run --interactive --tty --rm \
   --volume "$PWD":/opt/jenkins-job \
   --workdir /opt/jenkins-job \
-  jsallis/jenkins-job-builder \
+  thefynx/jenkins-job-builder \
   jenkins-jobs --conf jenkins.ini update job.yml
 ```
 
