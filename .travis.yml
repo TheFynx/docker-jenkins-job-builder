@@ -3,10 +3,10 @@ sudo: required
 services: docker
 script: travis_retry bundle exec rspec
 env:
-- JJBVERSION=1.6.1
-- GH_USER=thefynx
-global:
-  secure: P8zIXBwa64b8vNdl+M9gmOiQ1+dXvqdn0gZjTcLs7S68xKNgukNz6zAqUNv8BQW2Pni0S51OTTi0muXdtEf7Enwho/TNrMN3yIobaFpHw65JpCw/dPdkSewXNqm3u2yOJ5KYVpLTOnlBWmJtkBg/Oyz+Io1i5ZU7QwxsBodnNaFSYyLGSkmFWM/86mCQMGG1xDK6lQZ5zDm+m5W/V23yXMJOey/RjJVyiDCk9tmL4KF99DiUkN94laAhFycwfzQBsUzvEsFVF1buwh7DGCOgyUX5RUdagaH2ZrJ/K74z1QQfPLCsbUbzvol/4YKrm/YrbrrKdf/6qWTPdU9FhkHkgceC7k+DqGTW3oplnHDe6sR2pcmidrh2QiwM7d/QkV/96+aUJtMomSSoQpRFh6LWiPFMSFkBYeJwChPioAr/UJFvQYmhmimrnPwf/gWC6Ep/2qX0ePx3fRUC5tFXkrGIbALwb38eqf+HxL/nN72wqxam2R8Ua88Gu2iWx6XjElbzsV5yTd2TPa07/hHFWzExTwlzCb/D028XQszDDSjvyACdIzrBCab9uRRjEPZ/WwtJVbctXW/N1+3/o1dBTXF6EzAS3Gbk1zOV6fARirtoPpgPw2yv7jLDbTlZ7irDf5HqaV2zSeOfXVt4rFtKMQZ2RsPXQCwyqXrFk5OyIK62gb8=
+  global:
+    - JJBVERSION=1.6.1
+    - GH_USER=thefynx
+     secure: P8zIXBwa64b8vNdl+M9gmOiQ1+dXvqdn0gZjTcLs7S68xKNgukNz6zAqUNv8BQW2Pni0S51OTTi0muXdtEf7Enwho/TNrMN3yIobaFpHw65JpCw/dPdkSewXNqm3u2yOJ5KYVpLTOnlBWmJtkBg/Oyz+Io1i5ZU7QwxsBodnNaFSYyLGSkmFWM/86mCQMGG1xDK6lQZ5zDm+m5W/V23yXMJOey/RjJVyiDCk9tmL4KF99DiUkN94laAhFycwfzQBsUzvEsFVF1buwh7DGCOgyUX5RUdagaH2ZrJ/K74z1QQfPLCsbUbzvol/4YKrm/YrbrrKdf/6qWTPdU9FhkHkgceC7k+DqGTW3oplnHDe6sR2pcmidrh2QiwM7d/QkV/96+aUJtMomSSoQpRFh6LWiPFMSFkBYeJwChPioAr/UJFvQYmhmimrnPwf/gWC6Ep/2qX0ePx3fRUC5tFXkrGIbALwb38eqf+HxL/nN72wqxam2R8Ua88Gu2iWx6XjElbzsV5yTd2TPa07/hHFWzExTwlzCb/D028XQszDDSjvyACdIzrBCab9uRRjEPZ/WwtJVbctXW/N1+3/o1dBTXF6EzAS3Gbk1zOV6fARirtoPpgPw2yv7jLDbTlZ7irDf5HqaV2zSeOfXVt4rFtKMQZ2RsPXQCwyqXrFk5OyIK62gb8=
 before_deploy:
 - git config --global user.email "builds@travis-ci.com"
 - git config --global user.name "Travis CI"
