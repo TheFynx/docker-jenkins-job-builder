@@ -2,12 +2,25 @@ language: ruby
 sudo: required
 services: docker
 script: travis_retry bundle exec rspec
+env:
+  matrix:
+  - JJBVERSION=1.6.1
+  - GH_USER=thefynx
+  global:
+    secure: P8zIXBwa64b8vNdl+M9gmOiQ1+dXvqdn0gZjTcLs7S68xKNgukNz6zAqUNv8BQW2Pni0S51OTTi0muXdtEf7Enwho/TNrMN3yIobaFpHw65JpCw/dPdkSewXNqm3u2yOJ5KYVpLTOnlBWmJtkBg/Oyz+Io1i5ZU7QwxsBodnNaFSYyLGSkmFWM/86mCQMGG1xDK6lQZ5zDm+m5W/V23yXMJOey/RjJVyiDCk9tmL4KF99DiUkN94laAhFycwfzQBsUzvEsFVF1buwh7DGCOgyUX5RUdagaH2ZrJ/K74z1QQfPLCsbUbzvol/4YKrm/YrbrrKdf/6qWTPdU9FhkHkgceC7k+DqGTW3oplnHDe6sR2pcmidrh2QiwM7d/QkV/96+aUJtMomSSoQpRFh6LWiPFMSFkBYeJwChPioAr/UJFvQYmhmimrnPwf/gWC6Ep/2qX0ePx3fRUC5tFXkrGIbALwb38eqf+HxL/nN72wqxam2R8Ua88Gu2iWx6XjElbzsV5yTd2TPa07/hHFWzExTwlzCb/D028XQszDDSjvyACdIzrBCab9uRRjEPZ/WwtJVbctXW/N1+3/o1dBTXF6EzAS3Gbk1zOV6fARirtoPpgPw2yv7jLDbTlZ7irDf5HqaV2zSeOfXVt4rFtKMQZ2RsPXQCwyqXrFk5OyIK62gb8=
+before_deploy:
+- git config --global user.email "builds@travis-ci.com"
+- git config --global user.name "Travis CI"
+- export GIT_TAG=$JJBVERSION.b$TRAVIS_BUILD_NUMBER
+- git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+- git push -q https://$GH_USER:$GH_TOKEN@github.com/thefynx/docker-jenkins-job-builder --tags
+- ls -R
 deploy:
   provider: releases
   api_key:
     secure: NWi4mE95s4fU10fmDWjXZl78bR/cuxK+n20aJZ9XJ3e+qYJAZR2IXE2Zjmk0oPmIcE34J/fEKIwOd1DJ0jUBApCGg3li5+0HEBpeXz4NQgdSu4A5S8b/iKcTUUEDl7l3rUoL79TokgKJS3lcX8atfHCv/GVgQ+kLy8D9X1i4E7kgpcvJSgkYCH5RL/YmQP4i34wEA2DauCeYQMkL+hI2XDGyzegZycwqprD+ae0w/JtiGMk5fM3sahp9uOF3tKqSjBShRXw3EshGvpMIQoyycm3+YuFBuetZTtoAp3Zt/wW4B/xV4wWgnscUPpKLRRIjenR05HFkrm7DEYlXXngXt1os2zYL0Lagw9vlwlEw8bQRA0y38gRoA186a2PYjGs3wt1rwX0sExzjb+iKXbrQUXqbAV7wV1Ypu4+zn2z2r8OVOCiFvskvjeozQ2lLpvorUcNExLrh+SFkGjCmWR02M3xtFTnAjffn0K34BulHGDv1eC07BWeBnHnMWa8sWZEK1UFdVzmTTm1IQ1egmKKEATleiAYkoQEBFOhInWT7zNdH/J0ORLFRYzLcM/jH4Ab2ivjvtP0rSPGE5rWmg+VzPaxetRHzVjWnp0HRIr9SGCs9F9hO3dd18ka3d4ZaZu7R48SzUXKN3VZ+Xf4DyCnxy7PvRyn/6Xk8nsPGK2Z5FF0=
-  file: "Dockerfile"
+  file: Dockerfile
   skip_cleanup: true
   on:
     repo: TheFynx/docker-jenkins-job-builder
-    tags: true
+    tags: false
