@@ -6,6 +6,8 @@ deploy:
   provider: releases
   api_key:
     secure: NWi4mE95s4fU10fmDWjXZl78bR/cuxK+n20aJZ9XJ3e+qYJAZR2IXE2Zjmk0oPmIcE34J/fEKIwOd1DJ0jUBApCGg3li5+0HEBpeXz4NQgdSu4A5S8b/iKcTUUEDl7l3rUoL79TokgKJS3lcX8atfHCv/GVgQ+kLy8D9X1i4E7kgpcvJSgkYCH5RL/YmQP4i34wEA2DauCeYQMkL+hI2XDGyzegZycwqprD+ae0w/JtiGMk5fM3sahp9uOF3tKqSjBShRXw3EshGvpMIQoyycm3+YuFBuetZTtoAp3Zt/wW4B/xV4wWgnscUPpKLRRIjenR05HFkrm7DEYlXXngXt1os2zYL0Lagw9vlwlEw8bQRA0y38gRoA186a2PYjGs3wt1rwX0sExzjb+iKXbrQUXqbAV7wV1Ypu4+zn2z2r8OVOCiFvskvjeozQ2lLpvorUcNExLrh+SFkGjCmWR02M3xtFTnAjffn0K34BulHGDv1eC07BWeBnHnMWa8sWZEK1UFdVzmTTm1IQ1egmKKEATleiAYkoQEBFOhInWT7zNdH/J0ORLFRYzLcM/jH4Ab2ivjvtP0rSPGE5rWmg+VzPaxetRHzVjWnp0HRIr9SGCs9F9hO3dd18ka3d4ZaZu7R48SzUXKN3VZ+Xf4DyCnxy7PvRyn/6Xk8nsPGK2Z5FF0=
+  file: "Dockerfile"
+  skip_cleanup: true
   on:
     repo: TheFynx/docker-jenkins-job-builder
     tags: true
