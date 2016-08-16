@@ -104,5 +104,5 @@ docker build .
 
 ```
 bundle install
-bundle exec rspec specs
+bundle exec rspec
 ```
