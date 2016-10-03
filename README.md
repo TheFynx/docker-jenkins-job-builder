@@ -1,5 +1,5 @@
 # Dockerized Jenkins Job Builder
-[![Build Status](https://travis-ci.org/TheFynx/docker-jenkins-job-builder.svg?branch=master)](https://travis-ci.org/TheFynx/docker-jenkins-job-builder) [![GitHub release](https://img.shields.io/github/release/TheFynx/docker-jenkins-job-builder.svg?maxAge=2592000)](https://github.com/TheFynx/docker-jenkins-job-builder/releases) [![Docker Automated buil](https://img.shields.io/docker/automated/thefynx/jenkins-job-builder.svg?maxAge=2592000)](https://hub.docker.com/r/thefynx/jenkins-job-builder/) [![Docker Stars](https://img.shields.io/docker/stars/thefynx/jenkins-job-builder.svg?maxAge=2592000)](https://hub.docker.com/r/thefynx/jenkins-job-builder/) [![Docker Pulls](https://img.shields.io/docker/pulls/thefynx/jenkins-job-builder.svg?maxAge=2592000)](https://hub.docker.com/r/thefynx/jenkins-job-builder/)
+[![Build Status](https://travis-ci.org/TheFynx/docker-jenkins-job-builder.svg?branch=master)](https://travis-ci.org/TheFynx/docker-jenkins-job-builder) [![GitHub release](https://img.shields.io/github/release/TheFynx/docker-jenkins-job-builder.svg?maxAge=2592000)](https://github.com/TheFynx/docker-jenkins-job-builder/releases) [![Docker Automated buil](https://img.shields.io/docker/automated/thefynx/jenkins-job-builder.svg?maxAge=2592000)](https://hub.docker.com/r/thefynx/jenkins-job-builder/) [![Docker Stars](https://img.shields.io/docker/stars/thefynx/jenkins-job-builder.svg?maxAge=2592000)](https://hub.docker.com/r/thefynx/jenkins-job-builder/) [![Docker Pulls](https://img.shields.io/docker/pulls/thefynx/jenkins-job-builder.svg?maxAge=2592000)](https://hub.docker.com/r/thefynx/jenkins-job-builder/) [![](https://images.microbadger.com/badges/image/thefynx/jenkins-job-builder.svg)](https://microbadger.com/images/thefynx/jenkins-job-builder "Get your own image badge on microbadger.com")
 
 A [docker](http://www.docker.com) containerized version of the [Jenkins Job Builder](https://github.com/openstack-infra/jenkins-job-builder) tool. A pre-built image is available via [Docker Hub](https://hub.docker.com/r/thefynx/jenkins-job-builder)
 
@@ -117,3 +117,4 @@ docker build .
 bundle install
 bundle exec rspec
 ```
+ 
